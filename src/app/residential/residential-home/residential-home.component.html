@@ -1,0 +1,29 @@
+<form [formGroup]="resiForm" novalidate id="formId">
+  <div class="p-4 flex space-x-2">
+    <div class="flex space-x-2 align-middle">
+      <label for="tableName">Table Name</label>
+      <ejs-dropdownlist id="tableName" formControlName="tableName" name="tableName" [dataSource]="tableDDList"
+        placeholder="Select Table">
+      </ejs-dropdownlist>
+    </div>
+
+    <button ejs-button [disabled]="!resiForm.valid" (click)="getData()">
+      Get Data
+    </button>
+  </div>
+</form>
+
+<!-- <select matTooltip="Select Plant" formControlName="tableName" placeholder="Select Table"
+    class="rounded-md border border-gray-300 px-4 py-1">
+    <option value="{{TableName.ENERGY_GUIDE}}">Energy Guide</option>
+    <option value="{{TableName.MATERIAL}}">Material</option>
+  </select> -->
+
+<ejs-grid #grid [dataSource]="data | async" [allowSorting]="true" [allowPaging]="true" [pageSettings]="pageSettings"
+  [toolbar]="toolbar" [showColumnChooser]="true" [allowReordering]="true" (dataStateChange)="dataStateChanged($event)"
+  [selectionSettings]="selectionOptions" [contextMenuItems]="contextMenuItems" [enableStickyHeader]="true"
+  [allowTextWrap]="true" [allowResizing]="true" [showColumnMenu]="true" (dataBound)="dataBound()"
+  [allowFiltering]="true" [filterSettings]="filterSettings" [columns]="columns" [allowExcelExport]="true"
+  [allowPdfExport]="true" [editSettings]="editSettings" (dataSourceChanged)="dataSourceChanged($event)">
+
+</ejs-grid>

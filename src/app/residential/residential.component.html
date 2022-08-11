@@ -1,0 +1,16 @@
+<nav class="sticky flex justify-between bg-slate-200 items-center shadow-inner">
+  <div class="flex items-center">
+    <a [routerLink]="['/residential']" class="h-10 leading-10" routerLinkActive="bg-primary text-white font-medium"
+      [routerLinkActiveOptions]="{exact:true}" matRipple>
+      <div class="mx-4">Data Search</div>
+    </a>
+    <a [routerLink]="['att-manager']" class="h-10 leading-10" routerLinkActive="bg-primary text-white font-medium"
+      matRipple>
+      <div class="mx-4">Attribute Manager</div>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
